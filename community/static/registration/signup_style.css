@@ -1,0 +1,65 @@
+/* 设置注册页面的整体样式 */
+body {
+    font-family: Arial, sans-serif; /* 设置页面使用的字体 */
+    background-color: #f2f2f2; /* 设置页面背景颜色 */
+    display: flex;
+    flex-direction: column; /* 将元素在垂直方向上排列 */
+    justify-content: center; /* 居中对齐 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh;
+    margin: 0;
+}
+
+/* 设置注册表单容器的样式 */
+form {
+    background-color: #fff; /* 设置表单背景颜色 */
+    padding: 20px; /* 设置表单的内边距 */
+    border-radius: 5px; /* 设置表单的圆角边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加表单的阴影效果 */
+    width: 300px;
+}
+
+/* 设置表单标题的样式 */
+h2 {
+    text-align: center; /* 设置标题居中对齐 */
+    color: #333; /* 设置标题文字颜色 */
+    margin-bottom: 20px; /* 设置标题底部间距 */
+}
+
+/* 设置表单输入字段的样式 */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* 设置输入字段宽度 */
+    padding: 10px; /* 设置输入字段的内边距 */
+    margin-bottom: 10px; /* 设置输入字段的底部间距 */
+    border: 1px solid #ccc; /* 设置输入字段的边框 */
+    border-radius: 3px; /* 设置输入字段的圆角边框 */
+    box-sizing: border-box; /* 使内边距和边框包含在元素的总宽度和高度中 */
+}
+
+/* 设置注册按钮的样式 */
+button[type="submit"] {
+    width: 100%; /* 设置按钮宽度 */
+    padding: 10px; /* 设置按钮的内边距 */
+    background-color: #28a745; /* 设置按钮背景颜色 */
+    border: none; /* 移除按钮的边框 */
+    border-radius: 3px; /* 设置按钮的圆角边框 */
+    color: #fff; /* 设置按钮文字颜色 */
+    font-size: 16px; /* 设置按钮文字大小 */
+    cursor: pointer; /* 设置鼠标悬停时的光标样式 */
+}
+
+/* 设置登录链接的样式 */
+p {
+    text-align: center; /* 设置文本居中对齐 */
+    margin-top: 10px; /* 设置文本顶部间距 */
+}
+
+a {
+    color: #007bff; /* 设置链接文字颜色 */
+    text-decoration: none; /* 移除链接的下划线 */
+}
+
+a:hover {
+    text-decoration: underline; /* 设置鼠标悬停时链接的下划线 */
+}

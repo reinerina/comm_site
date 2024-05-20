@@ -1,0 +1,104 @@
+/* 设置页面的整体样式 */
+body {
+    font-family: Arial, sans-serif; /* 设置页面使用的字体 */
+    background-color: #f2f2f2; /* 设置页面背景颜色 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置页面标题的样式 */
+h1 {
+    color: #333; /* 设置标题文字颜色 */
+    margin-top: 20px; /* 设置标题顶部间距 */
+    margin-bottom: 20px; /* 设置标题底部间距 */
+    text-align: center; /* 设置标题居中对齐 */
+}
+
+/* 设置帖子列表的样式 */
+ul {
+    list-style-type: none; /* 去除列表项的默认样式 */
+    padding: 0;
+    margin: 0 10%; /* 设置帖子列表左右两侧的间距 */
+}
+
+/* 设置帖子项的样式 */
+li {
+    background-color: #fff; /* 设置帖子项的背景颜色 */
+    margin-bottom: 20px; /* 设置帖子项之间的间距 */
+    padding: 20px; /* 设置帖子项的内边距 */
+    border-radius: 5px; /* 设置帖子项的圆角边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加帖子项的阴影效果 */
+    display: flex; /* 使用弹性布局 */
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 设置帖子标题的样式 */
+li h2 {
+    color: #333; /* 设置帖子标题文字颜色 */
+    margin: 0; /* 设置帖子标题间距 */
+}
+
+/* 设置帖子内容的样式 */
+li p {
+    color: #666; /* 设置帖子内容文字颜色 */
+    margin: 0; /* 设置帖子内容间距 */
+}
+
+/* 设置顶部导航栏的样式 */
+.navbar {
+    background-color: #f8f9fa; /* 设置导航栏背景颜色 */
+    padding: 10px 20px; /* 设置导航栏内边距 */
+    display: flex; /* 使用弹性布局 */
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center; /* 垂直居中 */
+    border-bottom: 1px solid #e7e7e7; /* 设置导航栏底部边框 */
+}
+
+/* 设置右侧导航栏的样式 */
+.navbar-right {
+    display: flex; /* 使用弹性布局 */
+    align-items: center; /* 垂直居中 */
+}
+
+.navbar-right p {
+    margin-right: 20px; /* 设置右侧导航栏中各项之间的间距 */
+}
+
+/* 设置按钮和链接的样式 */
+.navbar-right button, .navbar-right a, .navbar-left button {
+    background-color: #007bff; /* 设置按钮和链接的背景颜色 */
+    color: white; /* 设置按钮和链接的文字颜色 */
+    padding: 10px 15px; /* 设置按钮和链接的内边距 */
+    border: none; /* 去除按钮和链接的边框 */
+    border-radius: 5px; /* 设置按钮和链接的圆角边框 */
+    text-decoration: none; /* 去除链接的下划线 */
+    cursor: pointer; /* 设置鼠标悬停时的光标样式 */
+    margin-left: 10px; /* 设置左侧间距 */
+}
+
+.navbar-right button:hover, .navbar-right a:hover, .navbar-left button:hover {
+    background-color: #0056b3; /* 设置按钮和链接悬停时的背景颜色 */
+}
+
+/* 设置左侧导航栏的样式 */
+.navbar-left {
+    display: flex; /* 使用弹性布局 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 设置红色按钮的样式（用于删除和注销按钮） */
+.red-button, .navbar-right .red-button {
+    background-color: #dc3545; /* 设置红色按钮的背景颜色 */
+    color: white; /* 设置红色按钮的文字颜色 */
+    padding: 10px 15px; /* 设置红色按钮的内边距 */
+    border: none; /* 去除红色按钮的边框 */
+    border-radius: 5px; /* 设置红色按钮的圆角边框 */
+    cursor: pointer; /* 设置红色按钮的光标样式 */
+    text-decoration: none; /* 去除链接的下划线 */
+    margin-left: 10px; /* 设置左侧间距 */
+}
+
+.red-button:hover, .navbar-right .red-button:hover {
+    background-color: #c82333; /* 设置红色按钮悬停时的背景颜色 */
+}

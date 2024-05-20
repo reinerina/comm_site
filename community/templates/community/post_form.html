@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'community/creat_post_style.css' %}">
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>创建新帖子</title>
+</head>
+<body>
+    <h1>创建新帖子</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">提交</button>
+    </form>
+    <a href="{% url 'post_list' %}">返回帖子列表</a>
+</body>
+</html>

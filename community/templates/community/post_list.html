@@ -1,0 +1,51 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'community/post_list_style.css' %}">
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>社区首页</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            {% if user.is_authenticated %}
+                <button onclick="location.href='{% url 'post_create' %}'">创建新帖子</button>
+            {% endif %}
+        </div>
+        <h1>帖子列表</h1>
+        <div class="navbar-right">
+            {% if user.is_authenticated %}
+                <p>欢迎, {{ user.username }}!</p>
+                <a href="{% url 'logout' %}" class="red-button">注销</a>
+            {% else %}
+                <a href="{% url 'login' %}">登录</a>
+                <a href="{% url 'signup' %}">注册</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="content">
+        {% if posts %}
+            <ul>
+                {% for post in posts %}
+                    <li>
+                        <div>
+                            <h2>{{ post.title }}</h2>
+                            <p>{{ post.content }}</p>
+                            <p>作者: {{ post.author.username }} | 创建时间: {{ post.created_at }}</p>
+                        </div>
+                        {% if user.is_authenticated and user == post.author %}
+                            <form method="post" action="{% url 'delete_post' post.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="red-button">删除</button>
+                            </form>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>暂时没有帖子。</p>
+        {% endif %}
+    </div>
+</body>
+</html>

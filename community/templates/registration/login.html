@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'registration/login_style.css' %}">
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>登录</title>
+</head>
+<body>
+    <h2>登录</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">登录</button>
+    </form>
+    <p>还没有账户？<a href="{% url 'signup' %}">注册</a></p>
+</body>
+</html>
