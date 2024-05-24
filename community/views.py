@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import Post
-from .forms import PostForm
-from django.contrib.auth.decorators import login_required
-
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect, get_object_or_404
+
+from .forms import PostForm
+from .models import Post
 
 
 def signup(request):
@@ -27,15 +27,17 @@ def post_list(request):
 
 @login_required
 def post_create(request):
+    task = request.GET.get('task', '')
+    task_time = request.GET.get('task_time', '')
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, initial={'task': task, 'task_time': task_time})
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
             post.save()
             return redirect('post_list')
     else:
-        form = PostForm()
+        form = PostForm(initial={'task': task, 'task_time': task_time})
     return render(request, 'community/post_form.html', {'form': form})
 
 @login_required
