@@ -1,4 +1,5 @@
 {% load static %}
+{% load filters %}
 
 <link rel="stylesheet" href="{% static 'community/post_list_style.css' %}">
 <!DOCTYPE html>
@@ -32,7 +33,10 @@
                         <div>
                             <h2>{{ post.title }}</h2>
                             <p>{{ post.content }}</p>
-                            <p>作者: {{ post.author.username }} | 创建时间: {{ post.created_at }}</p>
+                            <p1>作者: {{ post.author.username }} | 创建时间: {{ post.created_at }}</p1>
+                            {% if post.task and post.task_time %}
+                                <p1>| 已完成 {{ post.task }} {{ post.task_time|time_format }}</p1>
+                            {% endif %}
                         </div>
                         {% if user.is_authenticated and user == post.author %}
                             <form method="post" action="{% url 'delete_post' post.id %}">
