@@ -3,8 +3,19 @@
 <link rel="stylesheet" href="{% static 'community/post_detail_style.css' %}">
 
 {% block content %}
+    <div class="navbar">
+        <div class="navbar-left">
+            <button onclick="location.href='{% url 'post_list' %}'" class="back-button">返回主界面</button>
+        </div>
+        <div class="navbar-center">
+            <h1>{{ post.title }}</h1>
+            <div class="spacer"></div>
+        </div>
+        <div class="navbar-right">
+            <div class="spacer"></div>
+        </div>
+    </div>
   <div class="post-detail">
-    <h1>{{ post.title }}</h1>
     <p>{{ post.content }}</p>
     <p1>任务: {{ post.task }}</p1>
     <p1>任务时间: {{ post.task_time }}</p1>

@@ -112,6 +112,45 @@ h2 {
     background-color: #0056b3; /* 设置提交按钮悬停时的背景颜色 */
 }
 
+/* 设置顶部导航栏的样式 */
+.navbar {
+    background-color: #f8f9fa; /* 设置导航栏背景颜色 */
+    padding: 10px 20px; /* 设置导航栏内边距 */
+    display: flex; /* 使用弹性布局 */
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center; /* 垂直居中 */
+    border-bottom: 1px solid #e7e7e7; /* 设置导航栏底部边框 */
+}
+
+/* 设置左侧导航栏的样式 */
+.navbar-left {
+    display: flex; /* 使用弹性布局 */
+    align-items: center; /* 垂直居中 */
+    flex: 1;
+}
+
+/* 设置中间导航栏的样式 */
+.navbar-center {
+    flex: 2; /* 使中间导航栏占据更多空间 */
+    display: flex; /* 使用弹性布局 */
+    justify-content: center; /* 中间对齐 */
+}
+
+.navbar-left button {
+    background-color: #007bff; /* 设置按钮和链接的背景颜色 */
+    color: white; /* 设置按钮和链接的文字颜色 */
+    padding: 10px 15px; /* 设置按钮和链接的内边距 */
+    border: none; /* 去除按钮和链接的边框 */
+    border-radius: 5px; /* 设置按钮和链接的圆角边框 */
+    text-decoration: none; /* 去除链接的下划线 */
+    cursor: pointer; /* 设置鼠标悬停时的光标样式 */
+    margin-left: 10px; /* 设置左侧间距 */
+}
+
+.navbar-left button:hover {
+    background-color: #0056b3; /* 设置按钮和链接悬停时的背景颜色 */
+}
+
 /* 设置红色按钮的样式（用于删除和注销按钮） */
 .red-button{
     background-color: #dc3545; /* 设置红色按钮的背景颜色 */
@@ -122,4 +161,9 @@ h2 {
     cursor: pointer; /* 设置红色按钮的光标样式 */
     text-decoration: none; /* 去除链接的下划线 */
     margin-left: 10px; /* 设置左侧间距 */
+}
+
+/* 设置 spacer 的样式 */
+.spacer {
+    flex: 1; /* 使 spacer 占据一定空间，以便右侧内容对齐 */
 }
