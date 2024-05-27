@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post, Comment
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -11,7 +11,16 @@ class PostForm(forms.ModelForm):
             'task': '任务',
             'task_time': '任务时间'
         }
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['task'].disabled = True
         self.fields['task_time'].disabled = True
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['content']
+        labels = {
+            'content': ''
+        }

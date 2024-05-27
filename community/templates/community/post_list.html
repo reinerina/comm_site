@@ -32,7 +32,7 @@
                 {% for post in posts %}
                     <li>
                         <div>
-                            <h2>{{ post.title }}</h2>
+                            <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
                             <p>{{ post.content }}</p>
                             <p1>作者: {{ post.author.username }} | 创建时间: {{ post.created_at }}</p1>
                             {% if post.task and post.task_time %}

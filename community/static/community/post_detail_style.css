@@ -1,0 +1,110 @@
+/* 设置页面的整体样式 */
+body {
+    font-family: Arial, sans-serif; /* 设置页面使用的字体 */
+    background-color: #f2f2f2; /* 设置页面背景颜色 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置页面标题的样式 */
+h1 {
+    color: #333; /* 设置标题文字颜色 */
+    margin-top: 20px; /* 设置标题顶部间距 */
+    margin-bottom: 20px; /* 设置标题底部间距 */
+    text-align: center; /* 设置标题居中对齐 */
+}
+
+/* 设置帖子详细内容的样式 */
+.post-detail {
+    background-color: #fff; /* 设置帖子详细内容的背景颜色 */
+    margin: 20px 10%; /* 设置帖子详细内容的上下和左右间距 */
+    padding: 20px; /* 设置帖子详细内容的内边距 */
+    border-radius: 5px; /* 设置帖子详细内容的圆角边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加帖子详细内容的阴影效果 */
+}
+
+/* 设置帖子内容的样式 */
+.post-detail p {
+    color: #666; /* 设置帖子内容文字颜色 */
+    margin: 10px 0; /* 设置帖子内容上下间距 */
+    font-size: 18px; /* 设置帖子内容文字大小 */
+}
+
+/* 设置帖子内容的样式 */
+.post-detail p1 {
+    color: #666; /* 设置帖子内容文字颜色 */
+    margin: 10px 0; /* 设置帖子内容上下间距 */
+    font-size: 12px; /* 设置帖子内容文字大小 */
+}
+
+/* 设置评论标题的样式 */
+h2 {
+    color: #333; /* 设置评论标题文字颜色 */
+    margin-top: 20px; /* 设置评论标题顶部间距 */
+    margin-bottom: 20px; /* 设置评论标题底部间距 */
+}
+
+/* 设置评论列表的样式 */
+.comment-list {
+    list-style-type: none; /* 去除列表项的默认样式 */
+    padding: 0;
+    margin: 0;
+}
+
+/* 设置评论项的样式 */
+.comment {
+    background-color: #f8f9fa; /* 设置评论项的背景颜色 */
+    margin-bottom: 10px; /* 设置评论项之间的间距 */
+    padding: 10px; /* 设置评论项的内边距 */
+    border-radius: 5px; /* 设置评论项的圆角边框 */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* 添加评论项的阴影效果 */
+}
+
+/* 设置评论内容的样式 */
+.comment p {
+    color: #666; /* 设置评论内容文字颜色 */
+    margin: 5px 0; /* 设置评论内容上下间距 */
+}
+
+.comment-time {
+    color: #999; /* 设置评论时间文字颜色 */
+    font-size: 12px; /* 设置评论时间文字大小 */
+}
+
+/* 设置评论表单的样式 */
+.comment-form {
+    background-color: #fff; /* 设置评论表单的背景颜色 */
+    padding: 20px; /* 设置评论表单的内边距 */
+    border-radius: 5px; /* 设置评论表单的圆角边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加评论表单的阴影效果 */
+    margin-top: 20px; /* 设置评论表单的顶部间距 */
+    display: flex;
+    justify-content: center; /* 设置表单居中 */
+}
+
+/* 设置表单内元素的样式 */
+.comment-form form {
+    display: flex; /* 使用弹性布局 */
+    flex-direction: column; /* 垂直排列 */
+}
+
+.comment-form form input, .comment-form form textarea {
+    margin-bottom: 10px; /* 设置表单元素的底部间距 */
+    padding: 10px; /* 设置表单元素的内边距 */
+    border: 1px solid #ccc; /* 设置表单元素的边框 */
+    border-radius: 5px; /* 设置表单元素的圆角边框 */
+}
+
+/* 设置提交按钮的样式 */
+.comment-form button {
+    background-color: #007bff; /* 设置提交按钮的背景颜色 */
+    color: white; /* 设置提交按钮的文字颜色 */
+    padding: 10px 15px; /* 设置提交按钮的内边距 */
+    border: none; /* 去除提交按钮的边框 */
+    border-radius: 5px; /* 设置提交按钮的圆角边框 */
+    cursor: pointer; /* 设置提交按钮的光标样式 */
+}
+
+.comment-form button:hover {
+    background-color: #0056b3; /* 设置提交按钮悬停时的背景颜色 */
+}
