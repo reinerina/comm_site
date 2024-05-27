@@ -33,11 +33,15 @@ li {
     align-items: center; /* 垂直居中 */
 }
 
-/* 设置帖子标题的样式 */
-li h2 {
-    color: #333; /* 设置帖子标题文字颜色 */
-    margin: 0; /* 设置帖子标题间距 */
+h2 a {
+    color: #333; /* 设置链接颜色为黑色 */
+    text-decoration: none; /* 去掉下划线 */
 }
+
+h2 a:hover {
+    text-decoration: underline; /* 当鼠标悬停时添加下划线 */
+}
+
 
 /* 设置帖子内容的样式 */
 li p {

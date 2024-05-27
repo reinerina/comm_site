@@ -1,4 +1,4 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect, get_object_or_404
@@ -47,7 +47,7 @@ def post_create(request):
     task = request.GET.get('task', '')
     task_time = request.GET.get('task_time', '')
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, initial={'task': task, 'task_time': task_time})
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -63,4 +63,9 @@ def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     if request.user == post.author:
         post.delete()
+    return redirect('post_list')
+
+
+def logout_user(request):
+    logout(request)
     return redirect('post_list')
