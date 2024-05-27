@@ -8,4 +8,5 @@ urlpatterns = [
     path('accounts/logout/', views.logout_user, name='logout'),
     path('post/<int:post_id>/', views.post_detail, name='post_detail'),  # 添加帖子详细页面的URL模式
     path('post/<int:post_id>/delete/', views.delete_post, name='delete_post'),
+    path('post/<int:post_id>/comment/<int:comment_id>/delete/', views.delete_comment, name='delete_comment'),
 ]

@@ -58,6 +58,9 @@ h2 {
     padding: 10px; /* 设置评论项的内边距 */
     border-radius: 5px; /* 设置评论项的圆角边框 */
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* 添加评论项的阴影效果 */
+    display: flex; /* 使用弹性布局 */
+    justify-content: space-between; /* 主轴方向上的子元素两端对齐 */
+    align-items: center; /* 交叉轴方向上的子元素居中对齐 */
 }
 
 /* 设置评论内容的样式 */
@@ -107,4 +110,16 @@ h2 {
 
 .comment-form button:hover {
     background-color: #0056b3; /* 设置提交按钮悬停时的背景颜色 */
+}
+
+/* 设置红色按钮的样式（用于删除和注销按钮） */
+.red-button{
+    background-color: #dc3545; /* 设置红色按钮的背景颜色 */
+    color: white; /* 设置红色按钮的文字颜色 */
+    padding: 10px 15px; /* 设置红色按钮的内边距 */
+    border: none; /* 去除红色按钮的边框 */
+    border-radius: 5px; /* 设置红色按钮的圆角边框 */
+    cursor: pointer; /* 设置红色按钮的光标样式 */
+    text-decoration: none; /* 去除链接的下划线 */
+    margin-left: 10px; /* 设置左侧间距 */
 }

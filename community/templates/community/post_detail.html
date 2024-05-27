@@ -15,8 +15,17 @@
     <ul class="comment-list">
       {% for comment in comments %}
         <li class="comment">
-          <p>{{ comment.author.username }}: {{ comment.content }}</p>
-          <p1 class="comment-time">评论时间: {{ comment.created_at }}</p1>
+            <div>
+                <p>{{ comment.author.username }}</p>
+                <p>{{ comment.content }}</p>
+              <p1 class="comment-time">评论时间: {{ comment.created_at }}</p1>
+            </div>
+              {% if user.is_authenticated and user == comment.author %}
+                <form method="post" action="{% url 'delete_comment' post.id comment.id %}">
+                  {% csrf_token %}
+                  <button type="submit" class="red-button">删除</button>
+                </form>
+              {% endif %}
         </li>
       {% endfor %}
     </ul>

@@ -62,8 +62,15 @@ def post_create(request):
 def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     if request.user == post.author:
+        post.comments.all().delete()
         post.delete()
     return redirect('post_list')
+
+@login_required
+def delete_comment(request, post_id, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    comment.delete()
+    return redirect('post_detail', post_id=post_id)
 
 
 def logout_user(request):
