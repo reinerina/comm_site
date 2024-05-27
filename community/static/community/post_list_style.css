@@ -113,3 +113,7 @@ li p1 {
 .red-button:hover, .navbar-right .red-button:hover {
     background-color: #c82333; /* 设置红色按钮悬停时的背景颜色 */
 }
+
+.navbar-center .spacer {
+    flex-grow: 1; /* 使spacer扩展以占据剩余空间 */
+}
