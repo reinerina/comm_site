@@ -2,7 +2,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect, get_object_or_404
-
+from django.http import JsonResponse
 from .forms import PostForm, CommentForm
 from .models import Post, Comment
 
@@ -71,6 +71,30 @@ def delete_comment(request, post_id, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     comment.delete()
     return redirect('post_detail', post_id=post_id)
+
+
+@login_required
+def like_item(request, item_type, item_id):
+    if item_type == 'post':
+        item = get_object_or_404(Post, id=item_id)
+    elif item_type == 'comment':
+        item = get_object_or_404(Comment, id=item_id)
+    else:
+        return JsonResponse({'error': 'Invalid item type'}, status=400)
+
+    if item.likes.filter(id=request.user.id).exists():
+        item.likes.remove(request.user)
+        liked = False
+    else:
+        item.likes.add(request.user)
+        liked = True
+
+    return JsonResponse({
+        'liked': liked,
+        'total_likes': item.total_likes(),
+        'item_id': item_id,
+        'item_type': item_type
+    })
 
 
 def logout_user(request):
