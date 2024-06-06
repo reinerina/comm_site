@@ -1,169 +1,228 @@
 /* 设置页面的整体样式 */
 body {
-    font-family: Arial, sans-serif; /* 设置页面使用的字体 */
-    background-color: #f2f2f2; /* 设置页面背景颜色 */
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
 }
 
 /* 设置页面标题的样式 */
 h1 {
-    color: #333; /* 设置标题文字颜色 */
-    margin-top: 20px; /* 设置标题顶部间距 */
-    margin-bottom: 20px; /* 设置标题底部间距 */
-    text-align: center; /* 设置标题居中对齐 */
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px; /* 调大标题字体 */
 }
 
 /* 设置帖子详细内容的样式 */
 .post-detail {
-    background-color: #fff; /* 设置帖子详细内容的背景颜色 */
-    margin: 20px 10%; /* 设置帖子详细内容的上下和左右间距 */
-    padding: 20px; /* 设置帖子详细内容的内边距 */
-    border-radius: 5px; /* 设置帖子详细内容的圆角边框 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加帖子详细内容的阴影效果 */
+    background-color: #fff;
+    margin: 20px 10%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 设置帖子内容的样式 */
-.post-detail p {
-    color: #666; /* 设置帖子内容文字颜色 */
-    margin: 10px 0; /* 设置帖子内容上下间距 */
-    font-size: 18px; /* 设置帖子内容文字大小 */
+.post-content {
+    color: #666;
+    margin: 10px 0;
+    font-size: 24px;
+    text-align: center; /* 设置主贴内容居中 */
 }
 
-/* 设置帖子内容的样式 */
-.post-detail p1 {
-    color: #666; /* 设置帖子内容文字颜色 */
-    margin: 10px 0; /* 设置帖子内容上下间距 */
-    font-size: 12px; /* 设置帖子内容文字大小 */
+.post-details {
+    color: #666;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.post-details p1 {
+    display: block;
+    color: #666;
+    margin: 5px 0;
+    font-size: 14px;
+    text-align: left; /* 设置下面四项信息左对齐 */
+}
+
+.post-likes {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.like-button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.like-button:hover {
+    background-color: #0056b3;
 }
 
 /* 设置评论标题的样式 */
 h2 {
-    color: #333; /* 设置评论标题文字颜色 */
-    margin-top: 20px; /* 设置评论标题顶部间距 */
-    margin-bottom: 20px; /* 设置评论标题底部间距 */
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
 }
 
 /* 设置评论列表的样式 */
 .comment-list {
-    list-style-type: none; /* 去除列表项的默认样式 */
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
 /* 设置评论项的样式 */
 .comment {
-    background-color: #f8f9fa; /* 设置评论项的背景颜色 */
-    margin-bottom: 10px; /* 设置评论项之间的间距 */
-    padding: 10px; /* 设置评论项的内边距 */
-    border-radius: 5px; /* 设置评论项的圆角边框 */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* 添加评论项的阴影效果 */
-    display: flex; /* 使用弹性布局 */
-    justify-content: space-between; /* 主轴方向上的子元素两端对齐 */
-    align-items: center; /* 交叉轴方向上的子元素居中对齐 */
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    font-size: 18px;
 }
 
 /* 设置评论内容的样式 */
-.comment p {
-    color: #666; /* 设置评论内容文字颜色 */
-    margin: 5px 0; /* 设置评论内容上下间距 */
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-author {
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .comment-time {
-    color: #999; /* 设置评论时间文字颜色 */
-    font-size: 12px; /* 设置评论时间文字大小 */
+    color: #999;
+    font-size: 16px;
+}
+
+.comment-content {
+    color: #666;
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.comment-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-footer .total-likes {
+    margin-right: auto;
+}
+
+.red-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.red-button:hover {
+    background-color: #b02a37;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
 }
 
 /* 设置评论表单的样式 */
 .comment-form {
-    background-color: #fff; /* 设置评论表单的背景颜色 */
-    padding: 20px; /* 设置评论表单的内边距 */
-    border-radius: 5px; /* 设置评论表单的圆角边框 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加评论表单的阴影效果 */
-    margin-top: 20px; /* 设置评论表单的顶部间距 */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
     display: flex;
     justify-content: center; /* 设置表单居中 */
 }
 
-/* 设置表单内元素的样式 */
 .comment-form form {
-    display: flex; /* 使用弹性布局 */
-    flex-direction: column; /* 垂直排列 */
+    width: 100%; /* 设置表单宽度 */
+    max-width: 600px; /* 设置表单最大宽度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .comment-form form input, .comment-form form textarea {
-    margin-bottom: 10px; /* 设置表单元素的底部间距 */
-    padding: 10px; /* 设置表单元素的内边距 */
-    border: 1px solid #ccc; /* 设置表单元素的边框 */
-    border-radius: 5px; /* 设置表单元素的圆角边框 */
+    width: 100%; /* 设置表单元素宽度 */
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px; /* 调大表单输入字体 */
 }
 
-/* 设置提交按钮的样式 */
 .comment-form button {
-    background-color: #007bff; /* 设置提交按钮的背景颜色 */
-    color: white; /* 设置提交按钮的文字颜色 */
-    padding: 10px 15px; /* 设置提交按钮的内边距 */
-    border: none; /* 去除提交按钮的边框 */
-    border-radius: 5px; /* 设置提交按钮的圆角边框 */
-    cursor: pointer; /* 设置提交按钮的光标样式 */
-}
-
-.comment-form button:hover {
-    background-color: #0056b3; /* 设置提交按钮悬停时的背景颜色 */
+    width: 100%; /* 设置按钮宽度 */
 }
 
 /* 设置顶部导航栏的样式 */
 .navbar {
-    background-color: #f8f9fa; /* 设置导航栏背景颜色 */
-    padding: 10px 20px; /* 设置导航栏内边距 */
-    display: flex; /* 使用弹性布局 */
-    justify-content: space-between; /* 两端对齐 */
-    align-items: center; /* 垂直居中 */
-    border-bottom: 1px solid #e7e7e7; /* 设置导航栏底部边框 */
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e7e7e7;
 }
 
-/* 设置左侧导航栏的样式 */
 .navbar-left {
-    display: flex; /* 使用弹性布局 */
-    align-items: center; /* 垂直居中 */
+    display: flex;
+    align-items: center;
     flex: 1;
 }
 
-/* 设置中间导航栏的样式 */
 .navbar-center {
-    flex: 2; /* 使中间导航栏占据更多空间 */
-    display: flex; /* 使用弹性布局 */
-    justify-content: center; /* 中间对齐 */
+    flex: 2;
+    display: flex;
+    justify-content: center;
 }
 
 .navbar-left button {
-    background-color: #007bff; /* 设置按钮和链接的背景颜色 */
-    color: white; /* 设置按钮和链接的文字颜色 */
-    padding: 10px 15px; /* 设置按钮和链接的内边距 */
-    border: none; /* 去除按钮和链接的边框 */
-    border-radius: 5px; /* 设置按钮和链接的圆角边框 */
-    text-decoration: none; /* 去除链接的下划线 */
-    cursor: pointer; /* 设置鼠标悬停时的光标样式 */
-    margin-left: 10px; /* 设置左侧间距 */
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
 .navbar-left button:hover {
-    background-color: #0056b3; /* 设置按钮和链接悬停时的背景颜色 */
-}
-
-/* 设置红色按钮的样式（用于删除和注销按钮） */
-.red-button{
-    background-color: #dc3545; /* 设置红色按钮的背景颜色 */
-    color: white; /* 设置红色按钮的文字颜色 */
-    padding: 10px 15px; /* 设置红色按钮的内边距 */
-    border: none; /* 去除红色按钮的边框 */
-    border-radius: 5px; /* 设置红色按钮的圆角边框 */
-    cursor: pointer; /* 设置红色按钮的光标样式 */
-    text-decoration: none; /* 去除链接的下划线 */
-    margin-left: 10px; /* 设置左侧间距 */
+    background-color: #0056b3;
 }
 
 /* 设置 spacer 的样式 */
 .spacer {
-    flex: 1; /* 使 spacer 占据一定空间，以便右侧内容对齐 */
+    flex: 1;
 }

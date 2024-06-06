@@ -13,45 +13,53 @@
         <div class="spacer"></div>
     </div>
     <div class="post-detail">
-        <p>{{ post.content }}</p>
-        <p1>任务: {{ post.task }}</p1>
-        <p1>任务时间: {{ post.task_time }}</p1>
-        <p1>作者: {{ post.author.username }}</p1>
-        <p1 class="total-likes">总点赞数: <span id="likes-count-post-{{ post.id }}">{{ post.total_likes }}</span></p1>
-        <p1>创建时间: {{ post.created_at }}</p1>
-        <form class="like-form" action="{% url 'like_item' 'post' post.id %}" method="POST">
-            {% csrf_token %}
-            {% if user in post.likes.all %}
-                <button type="submit">取消点赞</button>
-            {% else %}
-                <button type="submit">点赞</button>
-            {% endif %}
-        </form>
+        <div class="post-content">
+            <p>{{ post.content }}</p>
+        </div>
+        <div class="post-details">
+            <p1>任务: {{ post.task }}</p1>
+            <p1>任务时间: {{ post.task_time }}</p1>
+            <p1>作者: {{ post.author.username }}</p1>
+            <p1>创建时间: {{ post.created_at }}</p1>
+        </div>
+        <div class="post-likes">
+            <p class="total-likes">总点赞数: <span id="likes-count-post-{{ post.id }}">{{ post.total_likes }}</span></p>
+            <form class="like-form" action="{% url 'like_item' 'post' post.id %}" method="POST">
+                {% csrf_token %}
+                {% if user in post.likes.all %}
+                    <button type="submit" class="like-button">取消点赞</button>
+                {% else %}
+                    <button type="submit" class="like-button">点赞</button>
+                {% endif %}
+            </form>
+        </div>
 
         <h2>评论</h2>
         <ul class="comment-list">
             {% for comment in comments %}
                 <li class="comment">
-                    <div>
-                        <p>{{ comment.author.username }}</p>
-                        <p>{{ comment.content }}</p>
-                        <p1 class="total-likes">总点赞数: <span id="likes-count-comment-{{ comment.id }}">{{ comment.total_likes }}</span></p1>
-                        <p1 class="comment-time">评论时间: {{ comment.created_at }}</p1>
+                    <div class="comment-header">
+                        <p class="comment-author">{{ comment.author.username }}</p>
+                        <p1 class="comment-time">{{ comment.created_at }}</p1>
+                    </div>
+                    <p class="comment-content">{{ comment.content }}</p>
+                    <div class="comment-footer">
+                        <p class="total-likes">总点赞数: <span id="likes-count-comment-{{ comment.id }}">{{ comment.total_likes }}</span></p>
                         <form class="like-form" action="{% url 'like_item' 'comment' comment.id %}" method="POST">
                             {% csrf_token %}
                             {% if user in comment.likes.all %}
-                                <button type="submit">取消点赞</button>
+                                <button type="submit" class="like-button">取消点赞</button>
                             {% else %}
-                                <button type="submit">点赞</button>
+                                <button type="submit" class="like-button">点赞</button>
                             {% endif %}
                         </form>
+                        {% if user.is_authenticated and user == comment.author %}
+                            <form method="post" action="{% url 'delete_comment' post.id comment.id %}" class="delete-form">
+                                {% csrf_token %}
+                                <button type="submit" class="red-button">删除</button>
+                            </form>
+                        {% endif %}
                     </div>
-                    {% if user.is_authenticated and user == comment.author %}
-                        <form method="post" action="{% url 'delete_comment' post.id comment.id %}">
-                            {% csrf_token %}
-                            <button type="submit" class="red-button">删除</button>
-                        </form>
-                    {% endif %}
                 </li>
             {% endfor %}
         </ul>
@@ -61,7 +69,7 @@
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit">添加评论</button>
+                <button type="submit" class="submit-button">添加评论</button>
             </form>
         </div>
     </div>
